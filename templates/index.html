@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Subnet Calculator</title>
+        <link rel="icon" type="image/x-icon" href="/Websites/Subnet Page/images/favicon.ico">
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <h1>Roos' Subnet Calc (short for calculator)</h1>
+        <form class="button" method="POST">
+            <input type="text" name="ipAddress">
+            <button type="submit">Calculate</button>
+        </form>
+        {% if error %}
+            <div class="error-box">
+            Invalid Input - type: {{ error }}
+            </div>
+        {% endif %}
+        {% if ip %}
+            <p>Entered Address:  {{ip}}{{cidr}}</p>
+            <br>
+            <p>IP Address:  {{ip}}</p>
+            <p>Subnet Mask:  {{subnet}}</p>
+            <p>CIDR Prefix:  {{cidr}}</p>
+            <p>Host Count:  {{host}}</p>
+            <p>Network Address:  {{network}}</p>
+            <p>Broadcast Address:  {{broadcast}}</p>
+            <p>Host Range:  {{range}}</p>
+        {% endif %}
+    </body>
+</html>
+
